@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../css/style2.css" rel="stylesheet">
+    </head>
+    <body>
+        <section>
+            <h2>JS gdh</h2>
+            <div class="banner">
+                <div class="blocks"></div>
+            </div>
+        </section>
+
+
+        <script>
+            const banner =document.getElementsByClassName('banner')[0]
+            const blocks =document.getElementsByClassName('blocks')
+
+            for(var et=1; et<400; et++){
+                banner.innerHTML +="<div class='blocks'></div>";
+
+                blocks[et].style.animationDelay = `${et * 0.05}s`;
+            }
+        </script>
+    </body>
+</html>
