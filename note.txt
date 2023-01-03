@@ -1,0 +1,31 @@
+I've fixed problem using  top:1000px and top:0px insted of transform and scale
+
+
+For firefox, use :  -ms-transform
+@-moz-document url-prefix() {
+    @keyframes animate
+    {
+        0%
+        {
+            opacity: 0;
+            -ms-transform: scale(0) translateY(1000px);
+        }
+        50%{
+            opacity: 1;
+            background: url('pexels-rfstudio-3810760.jpg');
+            background-position: center;
+            background-attachment: fixed;
+        }
+        100%
+        {
+            opacity: 1;
+            -ms-transform: scale(1) translateY(0px);
+            background: url('pexels-rfstudio-3810760.jpg');
+            background-position: center;
+            background-attachment: fixed;
+        }
+    }
+}
+
+Check animationDelay and animation Duration css properties in JavaScript
+sorry not position absolute use position relative to the block element...
