@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <article class="github">
+        <div class="git">
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+    </article>
+
+    <script>
+
+        var ul = document.querySelector('ul');
+
+        function getApiGithub()
+        {
+            fetch('https://api.github.com/users/edsontomas54/repos').then(async res =>{
+                if(!res.ok)
+                {
+                    throw new Error(res.status)
+                }
+                var date = await res.json()
+                date.map(item =>{
+                    let li = document.querySelector('li');
+                    li.innerHTML =`
+                   name: ${item.name}
+                    <br>
+                    url: ${item.url}
+                    <br>
+                    creted at:${Intl.DateTimeFormat('pt-br').format(new Date(item.created_at))}
+                    `
+                    ul.appendChild(li)
+                })
+            }).catch(e =>console.log(e));
+        }
+
+        getApiGithub()
+    </script>
+</body>
+</html>
