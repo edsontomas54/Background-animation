@@ -19,10 +19,10 @@
             const banner =document.getElementsByClassName('banner')[0]
             const blocks =document.getElementsByClassName('blocks')
 
-            for(var et=1; et<400; et++){
+            for(let et=1; et<200; et++){
                 banner.innerHTML +="<div class='blocks'></div>";
 
-                blocks[et].style.animationDelay = `${et * 0.05}s`;
+                blocks[et].style.animationDelay = `${et * .1}s`;
             }
         </script>
     </body>
